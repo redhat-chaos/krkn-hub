@@ -1,9 +1,10 @@
 name: Sync Workflow
 on:
   workflow_dispatch:
+
+permissions: write-all
 jobs:
   sync:
-    permissions: write-all
     name: Sync krkn-hub to the upstream repo
     env:
       GH_TOKEN: ${{ github.token }}
