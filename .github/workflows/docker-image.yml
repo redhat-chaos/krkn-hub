@@ -21,6 +21,9 @@ jobs:
         QUAY_TOKEN: ${{ secrets.QUAY_PASSWORD }}
     - name: Check out code
       uses: actions/checkout@main
+    - name: Add krknctl metadata to Dockerfiles
+      run: |
+        bash build.sh
     - name: Build the Docker images
       run: docker compose build --parallel
     - name: Push the Docker images
